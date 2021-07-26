@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_26_091302) do
+ActiveRecord::Schema.define(version: 2021_07_26_194717) do
 
   create_table "studentclasses", force: :cascade do |t|
     t.string "name"
     t.integer "students_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "teacher_id"
     t.index ["students_id"], name: "index_studentclasses_on_students_id"
+    t.index ["teacher_id"], name: "index_studentclasses_on_teacher_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -32,6 +34,23 @@ ActiveRecord::Schema.define(version: 2021_07_26_091302) do
     t.index ["studentclass_id"], name: "index_students_on_studentclass_id"
   end
 
+  create_table "teachers", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin", default: false
+    t.integer "studentclasses_id"
+    t.index ["email"], name: "index_teachers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true
+    t.index ["studentclasses_id"], name: "index_teachers_on_studentclasses_id"
+  end
+
   add_foreign_key "studentclasses", "students", column: "students_id"
+  add_foreign_key "studentclasses", "teachers"
   add_foreign_key "students", "studentclasses"
+  add_foreign_key "teachers", "studentclasses", column: "studentclasses_id"
 end
