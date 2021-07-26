@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :attendings
   devise_for :teachers
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :studentclasses
