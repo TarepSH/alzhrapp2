@@ -1,0 +1,27 @@
+<%= form_with(model: studnet_attending) do |form| %>
+  <% if studnet_attending.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(studnet_attending.errors.count, "error") %> prohibited this studnet_attending from being saved:</h2>
+
+      <ul>
+        <% studnet_attending.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :student_id %>
+    <%= form.text_field :student_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attending_id %>
+    <%= form.text_field :attending_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Students</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +14,6 @@
     <% @attendings.each do |attending| %>
       <tr>
         <td><%= attending.name %></td>
-        <td><%= attending.students_id %></td>
         <td><%= link_to 'Show', attending %></td>
         <td><%= link_to 'Edit', edit_attending_path(attending) %></td>
         <td><%= link_to 'Destroy', attending, method: :delete, data: { confirm: 'Are you sure?' } %></td>

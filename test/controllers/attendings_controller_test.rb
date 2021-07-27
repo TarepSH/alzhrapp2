@@ -17,7 +17,7 @@ class AttendingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create attending" do
     assert_difference('Attending.count') do
-      post attendings_url, params: { attending: { name: @attending.name, students_id: @attending.students_id } }
+      post attendings_url, params: { attending: { name: @attending.name } }
     end
 
     assert_redirected_to attending_url(Attending.last)
@@ -34,7 +34,7 @@ class AttendingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update attending" do
-    patch attending_url(@attending), params: { attending: { name: @attending.name, students_id: @attending.students_id } }
+    patch attending_url(@attending), params: { attending: { name: @attending.name } }
     assert_redirected_to attending_url(@attending)
   end
 

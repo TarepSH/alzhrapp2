@@ -1,0 +1,2 @@
+class Memorization < ApplicationRecord
+end

@@ -15,7 +15,6 @@ class AttendingsTest < ApplicationSystemTestCase
     click_on "New Attending"
 
     fill_in "Name", with: @attending.name
-    fill_in "Students", with: @attending.students_id
     click_on "Create Attending"
 
     assert_text "Attending was successfully created"
@@ -27,7 +26,6 @@ class AttendingsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Name", with: @attending.name
-    fill_in "Students", with: @attending.students_id
     click_on "Update Attending"
 
     assert_text "Attending was successfully updated"

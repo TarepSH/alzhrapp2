@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @studnet_attending.student_id %>
+</p>
+
+<p>
+  <strong>Attending:</strong>
+  <%= @studnet_attending.attending_id %>
+</p>
+
+<%= link_to 'Edit', edit_studnet_attending_path(@studnet_attending) %> |
+<%= link_to 'Back', studnet_attendings_path %>

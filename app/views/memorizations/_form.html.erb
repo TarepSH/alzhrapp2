@@ -1,0 +1,32 @@
+<%= form_with(model: memorization) do |form| %>
+  <% if memorization.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(memorization.errors.count, "error") %> prohibited this memorization from being saved:</h2>
+
+      <ul>
+        <% memorization.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :page %>
+    <%= form.number_field :page %>
+  </div>
+
+  <div class="field">
+    <%= form.label :part %>
+    <%= form.number_field :part %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,7 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: 2021-07-27
+  name: MyString
+  page: 1
+  part: 1
 
 two:
-  name: 2021-07-27
+  name: MyString
+  page: 1
+  part: 1
