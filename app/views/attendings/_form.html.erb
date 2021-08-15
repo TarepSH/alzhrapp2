@@ -20,3 +20,8 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<% Student.all.each do |student| %>
+  <%= check_box_tag "attending[Student.ids][]",student.id, @attending.student_ids.include?(student.id) %>
+  <%= student.first_name %> <br>
+<% end %>

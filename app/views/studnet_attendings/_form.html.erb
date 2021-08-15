@@ -14,14 +14,17 @@
   <div class="field">
     <%= form.label :student_id %>
     <%= form.text_field :student_id %>
+    
   </div>
 
   <div class="field">
     <%= form.label :attending_id %>
     <%= form.text_field :attending_id %>
-  </div>
+    <%= form.check_box :teacher, {multiple: true}, 1, nil %>  </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+

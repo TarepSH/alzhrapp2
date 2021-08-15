@@ -13,6 +13,8 @@ class StudnetAttendingsController < ApplicationController
   # GET /studnet_attendings/new
   def new
     @studnet_attending = StudnetAttending.new
+    @attendings = Attending.all
+    @studnets = Student.all
   end
 
   # GET /studnet_attendings/1/edit

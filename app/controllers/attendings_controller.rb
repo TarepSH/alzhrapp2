@@ -8,6 +8,7 @@ class AttendingsController < ApplicationController
 
   # GET /attendings/1 or /attendings/1.json
   def show
+    @attendings = StudnetAttending.all
   end
 
   # GET /attendings/new
