@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/index'
   resources :studnet_attendings
   resources :attendings
   resources :memorizations
@@ -7,6 +8,6 @@ Rails.application.routes.draw do
   resources :studentclasses
   resources :students
 
-  root to: "students#index"
+  root to: "home#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
