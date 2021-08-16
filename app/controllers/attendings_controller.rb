@@ -8,7 +8,6 @@ class AttendingsController < ApplicationController
 
   # GET /attendings/1 or /attendings/1.json
   def show
-    @attendings = StudnetAttending.all
   end
 
   # GET /attendings/new
@@ -65,6 +64,6 @@ class AttendingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def attending_params
-      params.require(:attending).permit(:name)
+      params.require(:attending).permit(:name, student_ids: [])
     end
 end

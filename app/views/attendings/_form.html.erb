@@ -15,13 +15,12 @@
     <%= form.label :name %>
     <%= form.date_select :name %>
   </div>
-
+  <% Student.all.each do |student| %>
+    <%= check_box_tag "attending[student_ids][]",student.id, @attending.student_ids.include?(student.id), id: dom_id(student) %>
+    <%= label_tag dom_id(student), student.first_name %> <br>
+  <% end %>
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
 
-<% Student.all.each do |student| %>
-  <%= check_box_tag "attending[Student.ids][]",student.id, @attending.student_ids.include?(student.id) %>
-  <%= student.first_name %> <br>
-<% end %>
