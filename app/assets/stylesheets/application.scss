@@ -16,3 +16,12 @@
  */
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+@font-face {
+    font-family: 'DroidKufi';
+    src: url('DroidKufi-Regular.ttf');
+ }
+
+ body {
+    font-family: "DroidKufi" !important;
+ }
