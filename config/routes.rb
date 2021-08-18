@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  resources :studnet_memorizations
-  get 'home/home'
-  resources :studnet_attendings
+  #resources :studnet_memorizations
+  get 'home/index'
+  #resources :studnet_attendings
   resources :attendings
-  resources :memorizations
+  resources :memorizations, :only => [:new]
   devise_for :teachers, :skip => [:registrations] 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :studentclasses
-  resources :students
+  #resources :studentclasses
+  resources :students, :only => [:index, :show] 
 
-  root to: "home#home"
+  root to: "home#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
