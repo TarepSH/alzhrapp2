@@ -24,10 +24,13 @@
               <ul class="navbar-nav">
                 <% if teacher_signed_in? %>
                   <li class="nav-item">
-                      <%= link_to  "الحلقات", studentclasses_path , class: "nav-link" %>
+                      <%= link_to  "تسجيل حضور", new_studnet_attending_path , class: "nav-link" %>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="#">اتصل بنا</a>
+                  <%= link_to  "تسجيل تسميع", new_studnet_memorization_path , class: "nav-link" %>
+                  </li>
+                  <li class="nav-item">
+                  <%= link_to  "قائمة الطلاب", students_path , class: "nav-link" %>
                   </li>
                     <li class="nav-item"><%= link_to "تسجيل خروج", destroy_teacher_session_path, :method => :delete, class: "nav-link" %></li>
                 <% else %>
