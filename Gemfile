@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'rails_admin', '~> 2.0'
 gem 'devise'
+gem 'devise-i18n'
+gem 'rails-i18n', '~> 6.0.0'
 gem 'bootstrap', '~> 5.1.0'
 gem 'jquery-rails'
 
