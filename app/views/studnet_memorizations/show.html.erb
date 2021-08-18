@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @studnet_memorization.student_id %>
+</p>
+
+<p>
+  <strong>Memorization:</strong>
+  <%= @studnet_memorization.memorization_id %>
+</p>
+
+<%= link_to 'Edit', edit_studnet_memorization_path(@studnet_memorization) %> |
+<%= link_to 'Back', studnet_memorizations_path %>

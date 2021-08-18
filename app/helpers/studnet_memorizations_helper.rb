@@ -1,0 +1,2 @@
+module StudnetMemorizationsHelper
+end

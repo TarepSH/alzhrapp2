@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :studnet_memorizations
   get 'home/index'
   resources :studnet_attendings
   resources :attendings

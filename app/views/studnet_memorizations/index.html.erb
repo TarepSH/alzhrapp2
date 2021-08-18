@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Studnet Memorizations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Memorization</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @studnet_memorizations.each do |studnet_memorization| %>
+      <tr>
+        <td><%= studnet_memorization.student_id %></td>
+        <td><%= studnet_memorization.memorization_id %></td>
+        <td><%= link_to 'Show', studnet_memorization %></td>
+        <td><%= link_to 'Edit', edit_studnet_memorization_path(studnet_memorization) %></td>
+        <td><%= link_to 'Destroy', studnet_memorization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Studnet Memorization', new_studnet_memorization_path %>

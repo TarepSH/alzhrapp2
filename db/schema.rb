@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_27_193520) do
+ActiveRecord::Schema.define(version: 2021_08_18_184102) do
 
   create_table "attendings", force: :cascade do |t|
     t.date "name"
@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 2021_07_27_193520) do
     t.index ["student_id"], name: "index_studnet_attendings_on_student_id"
   end
 
+  create_table "studnet_memorizations", force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "memorization_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["memorization_id"], name: "index_studnet_memorizations_on_memorization_id"
+    t.index ["student_id"], name: "index_studnet_memorizations_on_student_id"
+  end
+
   create_table "teachers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -77,5 +86,7 @@ ActiveRecord::Schema.define(version: 2021_07_27_193520) do
   add_foreign_key "students", "studentclasses"
   add_foreign_key "studnet_attendings", "attendings"
   add_foreign_key "studnet_attendings", "students"
+  add_foreign_key "studnet_memorizations", "memorizations"
+  add_foreign_key "studnet_memorizations", "students"
   add_foreign_key "teachers", "studentclasses", column: "studentclasses_id"
 end
