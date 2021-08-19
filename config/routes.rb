@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'home/index'
   #resources :studnet_attendings
   resources :attendings
-  resources :memorizations, :only => [:new]
+  resources :memorizations
   devise_for :teachers, :skip => [:registrations] 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   #resources :studentclasses

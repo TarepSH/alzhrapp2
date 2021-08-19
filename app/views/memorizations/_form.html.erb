@@ -10,21 +10,15 @@
       </ul>
     </div>
   <% end %>
+<div class="form-group">
+      <%= form.label "page" %>
+    <%= form.collection_select :memorization_id, Memorization.order(:name),:id,:name, include_blank: false %>  </div>
+</div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :page %>
-    <%= form.number_field :page %>
-  </div>
-
-  <div class="field">
-    <%= form.label :part %>
-    <%= form.number_field :part %>
-  </div>
+<div class="form-group">
+      <%= form.label "studnet" %>
+    <%= form.collection_select :student_id, Student.order(:id),:id,:first_name, include_blank: false %>  </div>
+</div>
 
   <div class="actions">
     <%= form.submit %>

@@ -64,6 +64,6 @@ class MemorizationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def memorization_params
-      params.require(:memorization).permit(:name, :page, :part)
+      params.require(:memorization).permit(:name, :page, :part, :student)
     end
 end
