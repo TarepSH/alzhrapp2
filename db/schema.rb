@@ -49,12 +49,12 @@ ActiveRecord::Schema.define(version: 2021_08_18_184102) do
   end
 
   create_table "studnet_attendings", force: :cascade do |t|
-    t.integer "student_id", null: false
+    t.integer "students_id"
     t.integer "attending_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["attending_id"], name: "index_studnet_attendings_on_attending_id"
-    t.index ["student_id"], name: "index_studnet_attendings_on_student_id"
+    t.index ["students_id"], name: "index_studnet_attendings_on_students_id"
   end
 
   create_table "studnet_memorizations", force: :cascade do |t|
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2021_08_18_184102) do
   add_foreign_key "studentclasses", "teachers"
   add_foreign_key "students", "studentclasses"
   add_foreign_key "studnet_attendings", "attendings"
-  add_foreign_key "studnet_attendings", "students"
+  add_foreign_key "studnet_attendings", "students", column: "students_id"
   add_foreign_key "studnet_memorizations", "memorizations"
   add_foreign_key "studnet_memorizations", "students"
   add_foreign_key "teachers", "studentclasses", column: "studentclasses_id"

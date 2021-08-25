@@ -1,4 +1,4 @@
 class StudnetAttending < ApplicationRecord
-  belongs_to :student
+  has_many :students
   belongs_to :attending
 end
