@@ -1,6 +1,6 @@
 require "test_helper"
 
-class StudnetAttendingTest < ActiveSupport::TestCase
+class AttendingsStudentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

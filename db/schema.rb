@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_18_184102) do
+ActiveRecord::Schema.define(version: 2021_08_29_165455) do
 
   create_table "attendings", force: :cascade do |t|
     t.date "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "attendings_students", force: :cascade do |t|
+    t.integer "attending_id", null: false
+    t.integer "student_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["attending_id"], name: "index_attendings_students_on_attending_id"
+    t.index ["student_id"], name: "index_attendings_students_on_student_id"
   end
 
   create_table "memorizations", force: :cascade do |t|
@@ -49,12 +58,12 @@ ActiveRecord::Schema.define(version: 2021_08_18_184102) do
   end
 
   create_table "studnet_attendings", force: :cascade do |t|
-    t.integer "students_id"
+    t.integer "student_id"
     t.integer "attending_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["attending_id"], name: "index_studnet_attendings_on_attending_id"
-    t.index ["students_id"], name: "index_studnet_attendings_on_students_id"
+    t.index ["student_id"], name: "index_studnet_attendings_on_student_id"
   end
 
   create_table "studnet_memorizations", force: :cascade do |t|
@@ -64,6 +73,15 @@ ActiveRecord::Schema.define(version: 2021_08_18_184102) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["memorization_id"], name: "index_studnet_memorizations_on_memorization_id"
     t.index ["student_id"], name: "index_studnet_memorizations_on_student_id"
+  end
+
+  create_table "studnets_attendings", force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "attending_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["attending_id"], name: "index_studnets_attendings_on_attending_id"
+    t.index ["student_id"], name: "index_studnets_attendings_on_student_id"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -81,12 +99,16 @@ ActiveRecord::Schema.define(version: 2021_08_18_184102) do
     t.index ["studentclasses_id"], name: "index_teachers_on_studentclasses_id"
   end
 
+  add_foreign_key "attendings_students", "attendings"
+  add_foreign_key "attendings_students", "students"
   add_foreign_key "studentclasses", "students", column: "students_id"
   add_foreign_key "studentclasses", "teachers"
   add_foreign_key "students", "studentclasses"
   add_foreign_key "studnet_attendings", "attendings"
-  add_foreign_key "studnet_attendings", "students", column: "students_id"
+  add_foreign_key "studnet_attendings", "students"
   add_foreign_key "studnet_memorizations", "memorizations"
   add_foreign_key "studnet_memorizations", "students"
+  add_foreign_key "studnets_attendings", "attendings"
+  add_foreign_key "studnets_attendings", "students"
   add_foreign_key "teachers", "studentclasses", column: "studentclasses_id"
 end
