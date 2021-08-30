@@ -10,17 +10,16 @@
       </ul>
     </div>
   <% end %>
-  <div class="form-group">
-    <%= form.label "Histeory" %>
-    <%= form.collection_select :attending_id, Attending.order(:name),:id,:name, include_blank: false %>  </div>
-
+      <h5>حدد الطلاب لتسجيل حضورهم لتاريخ <strong><%= attending.name %></strong></h5>
+      <br>
   <div class="form-group">
   <% Student.all.each do |student| %>
-    <%= check_box_tag "attending[student_ids][]",student.id, @attending.student_ids.include?(student.id), id: dom_id(student),  :class => 'form-check-input' %>
-    <%= label_tag dom_id(student), student.first_name, :class => 'form-check-label' %> <br>
+    <h5><%= check_box_tag "attending[student_ids][]",student.id, @attending.student_ids.include?(student.id), id: dom_id(student),  :class => 'form-check-input' %>
+    <%= label_tag dom_id(student), student.first_name, :class => 'form-check-label' %> <%= label_tag dom_id(student), student.last_name, :class => 'form-check-label' %> </h5>
+    <br>
   <% end %>
   </div>
-
+    <br>
     <%= form.submit "تسجيل حضور", :class => 'btn btn-primary' %>
   
 <% end %>

@@ -1,19 +1,29 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row ">
+    <div class="col-6 col justify-content-center">
 
-<p>
-  <strong>Name:</strong>
-  <%= @attending.name %>
-  <br>
-  <% @attending.students.each do |attending| %>
-    <tr>
-      <td><%= attending.first_name %></td>
-      <td><%= link_to 'Show', attending %></td>
-      <td><%= link_to 'Edit', edit_attending_path(attending) %></td>
-      <td><%= link_to 'Destroy', attending, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      <strong>التاريخ:</strong>
       <br>
-    </tr>
-  <% end %>
-</p>
+      <%= @attending.name %>
+      <br>  <br>
+      <strong>الطلاب:</strong>
+      <br>
+    
+      <% @attending.students.each do |attending| %>
+        <tr>
+          <td><%= attending.first_name %> <%= attending.last_name %></td>
+          <td><%# link_to 'Show', attending %></td>
+          <td><%# link_to 'Edit', edit_attending_path(attending) %></td>
+          <td><%# link_to 'Destroy', attending, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <br>
+        </tr>
+      <% end %>
 
-<%= link_to 'Edit', edit_attending_path(@attending) %> |
-<%= link_to 'Back', attendings_path %>
+      <br><br>
+    <%= link_to 'تعديل', edit_attending_path(@attending) %> |
+    <%= link_to 'الرجوع', attendings_path %>
+    </div>
+  </div>
+</div>
