@@ -3,7 +3,8 @@ class AttendingsController < ApplicationController
 
   # GET /attendings or /attendings.json
   def index
-    @attendings = Attending.all
+    @attendings = Attending.order("name").page(params[:page]).per(1)
+    
   end
 
   # GET /attendings/1 or /attendings/1.json

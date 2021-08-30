@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Attendings</h1>
+<h1>تسجيل حضور</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>التاريخ</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,14 +14,22 @@
     <% @attendings.each do |attending| %>
       <tr>
         <td><%= attending.name %></td>
-        <td><%= link_to 'Show', attending %></td>
-        <td><%= link_to 'Edit', edit_attending_path(attending) %></td>
-        <td><%= link_to 'Destroy', attending, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%# link_to 'Show', attending %></td>
+        <td><%= link_to 'اختيار', edit_attending_path(attending) %></td>
+        <td><%# link_to 'Destroy', attending, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+
+
+<%= paginate @attendings %>
+
+
+<span class="prev  disabled"><%= raw(t 'views.pagination.previous') %></span>
+
+
 
 <%= link_to 'New Attending', new_attending_path %>
