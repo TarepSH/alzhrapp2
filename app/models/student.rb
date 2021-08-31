@@ -6,6 +6,6 @@ class Student < ApplicationRecord
   has_many :studnet_memorizations
   has_many :memorizations, through: :studnet_memorizations
 
-  has_and_belongs_to_many :attendings
+  has_and_belongs_to_many :attendings, dependent: :destroy
 
 end

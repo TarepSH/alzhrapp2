@@ -57,15 +57,6 @@ ActiveRecord::Schema.define(version: 2021_08_29_165455) do
     t.index ["studentclass_id"], name: "index_students_on_studentclass_id"
   end
 
-  create_table "studnet_attendings", force: :cascade do |t|
-    t.integer "student_id"
-    t.integer "attending_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["attending_id"], name: "index_studnet_attendings_on_attending_id"
-    t.index ["student_id"], name: "index_studnet_attendings_on_student_id"
-  end
-
   create_table "studnet_memorizations", force: :cascade do |t|
     t.integer "student_id", null: false
     t.integer "memorization_id", null: false
@@ -73,15 +64,6 @@ ActiveRecord::Schema.define(version: 2021_08_29_165455) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["memorization_id"], name: "index_studnet_memorizations_on_memorization_id"
     t.index ["student_id"], name: "index_studnet_memorizations_on_student_id"
-  end
-
-  create_table "studnets_attendings", force: :cascade do |t|
-    t.integer "student_id", null: false
-    t.integer "attending_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["attending_id"], name: "index_studnets_attendings_on_attending_id"
-    t.index ["student_id"], name: "index_studnets_attendings_on_student_id"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -104,11 +86,7 @@ ActiveRecord::Schema.define(version: 2021_08_29_165455) do
   add_foreign_key "studentclasses", "students", column: "students_id"
   add_foreign_key "studentclasses", "teachers"
   add_foreign_key "students", "studentclasses"
-  add_foreign_key "studnet_attendings", "attendings"
-  add_foreign_key "studnet_attendings", "students"
   add_foreign_key "studnet_memorizations", "memorizations"
   add_foreign_key "studnet_memorizations", "students"
-  add_foreign_key "studnets_attendings", "attendings"
-  add_foreign_key "studnets_attendings", "students"
   add_foreign_key "teachers", "studentclasses", column: "studentclasses_id"
 end
