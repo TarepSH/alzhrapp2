@@ -37,3 +37,15 @@ a:visited  {
    background-color: #0d6efd;
    border-color: #0d6efd;
  }
+
+ .disabled-custom{
+   pointer-events: none !important;
+   cursor: not-allowed !important;
+   color: gray !important;
+   background-color: gray !important;
+  }
+  
+  .disabled-custom-label{
+   pointer-events: none !important;
+   cursor: not-allowed !important;
+  }
