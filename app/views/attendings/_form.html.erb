@@ -13,7 +13,7 @@
       <h5>حدد الطلاب لتسجيل حضورهم لتاريخ <strong><%= attending.name %></strong></h5>
       <br>
   <div class="form-group">
-  <% Student.all.each do |student| %>
+  <% current_teacher.Studentclass.students.each do |student| %>
     <h5><%= check_box_tag "attending[student_ids][]",student.id, @attending.student_ids.include?(student.id), id: dom_id(student), class: (@attending.student_ids.include?(student.id) ? "form-check-input disabled-custom" : "form-check-input")  %>
     <%= label_tag dom_id(student), student.first_name, :class => 'form-check-label disabled-custom-label' %> <%= label_tag dom_id(student), student.last_name, :class => 'form-check-label disabled-custom-label' %> </h5>
     <br>
