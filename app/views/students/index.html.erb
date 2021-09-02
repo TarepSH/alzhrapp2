@@ -1,37 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Students</h1>
+<h1>الطلاب</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>School class</th>
-      <th>Mobile phone</th>
-      <th>Line phone</th>
-      <th>Studentclass</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
+  <div class="row ">
+    <div class="col-6 col justify-content-center">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th scope="col">الاسم</th>
+            <th scope="col">الكنية</th>
+            <th scope="col">الصف الدراسي</th>
+            <th scope="col">رقم الموبايل</th>
+            <th scope="col">الرقم الأرضي</th>
+            <th scope="col">حلقة الطالب</th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @students.each do |student| %>
-      <tr>
-        <td><%= student.first_name %></td>
-        <td><%= student.last_name %></td>
-        <td><%= student.school_class %></td>
-        <td><%= student.mobile_phone %></td>
-        <td><%= student.line_phone %></td>
-        <td><%= student.studentclass_id %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%# link_to 'Edit', edit_student_path(student) %></td>
-        <td><%# link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @students.each do |student| %>
+          <tr>
+            <td scope="row"><%= student.first_name %></td>
+            <td scope="row"><%= student.last_name %></td>
+            <td scope="row"><%= student.school_class %></td>
+            <td scope="row"><%= student.mobile_phone %></td>
+            <td scope="row"><%= student.line_phone %></td>
+            <td scope="row"><%= student.studentclass_id %></td>
+            <td scope="row"><%# link_to 'Show', student %></td>
+            <td scope="row"><%= link_to 'اختيار', edit_student_path(student), class: "btn btn-primary " %></td>
+            <td scope="row"><%# link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<br>
+     <br>
+   </div>
+  </div>
+</div>
 
 <%# link_to 'New Student', new_student_path %>

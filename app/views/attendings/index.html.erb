@@ -17,7 +17,7 @@
           <% @attendings.each do |attending| %>
             <tr>
               <td scope="row"><strong><h5><%= attending.name %></h5></strong></td>
-              <td scope="row"><%= link_to 'اختيار', edit_attending_path(attending), class: "btn btn-primary " %></td>
+              <td scope="row"><%= link_to 'اختيار', edit_attending_path(attending), memorizations%></td>
             </tr>
           <% end %>
         </tbody>
@@ -29,6 +29,8 @@
       <%= paginate @attendings %>
 
     </div>
+  </div>
+</div>
 
 
 

@@ -11,37 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
+      <h5>حدد الصفحات لتسجيل التسميع <strong><%= student.first_name %> <%= student.last_name %></strong></h5>
+      <br>
 
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
+  <div class="form-group">
+  <% Memorization.all.each do |memorization| %>
+    <h5><%= check_box_tag "student[memorization_ids][]",memorization.id, @student.memorization_ids.include?(memorization.id), id: dom_id(memorization), class: (@student.memorization_ids.include?(memorization.id) ? "form-check-input disabled-custom" : "form-check-input") %>
+    <%= label_tag dom_id(memorization), memorization.name, :class => 'form-check-label disabled-custom-label' %> </h5>
+    <br>
+  <% end %>
 
-  <div class="field">
-    <%= form.label :school_class %>
-    <%= form.number_field :school_class %>
   </div>
-
-  <div class="field">
-    <%= form.label :mobile_phone %>
-    <%= form.number_field :mobile_phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :line_phone %>
-    <%= form.number_field :line_phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :studentclass_id %>
-    <%= form.text_field :studentclass_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <br>
+    <%= form.submit "تسجيل التسميع", :class => 'btn btn-primary' %>
+  
 <% end %>
+
+

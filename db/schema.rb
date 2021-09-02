@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_29_165455) do
+ActiveRecord::Schema.define(version: 2021_09_02_094605) do
 
   create_table "attendings", force: :cascade do |t|
     t.date "name"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 2021_08_29_165455) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "memorizations_students", force: :cascade do |t|
+    t.integer "memorization_id", null: false
+    t.integer "student_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["memorization_id"], name: "index_memorizations_students_on_memorization_id"
+    t.index ["student_id"], name: "index_memorizations_students_on_student_id"
+  end
+
   create_table "studentclasses", force: :cascade do |t|
     t.string "name"
     t.integer "students_id"
@@ -57,15 +66,6 @@ ActiveRecord::Schema.define(version: 2021_08_29_165455) do
     t.index ["studentclass_id"], name: "index_students_on_studentclass_id"
   end
 
-  create_table "studnet_memorizations", force: :cascade do |t|
-    t.integer "student_id", null: false
-    t.integer "memorization_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["memorization_id"], name: "index_studnet_memorizations_on_memorization_id"
-    t.index ["student_id"], name: "index_studnet_memorizations_on_student_id"
-  end
-
   create_table "teachers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -83,10 +83,10 @@ ActiveRecord::Schema.define(version: 2021_08_29_165455) do
 
   add_foreign_key "attendings_students", "attendings"
   add_foreign_key "attendings_students", "students"
+  add_foreign_key "memorizations_students", "memorizations"
+  add_foreign_key "memorizations_students", "students"
   add_foreign_key "studentclasses", "students", column: "students_id"
   add_foreign_key "studentclasses", "teachers"
   add_foreign_key "students", "studentclasses"
-  add_foreign_key "studnet_memorizations", "memorizations"
-  add_foreign_key "studnet_memorizations", "students"
   add_foreign_key "teachers", "studentclasses", column: "studentclasses_id"
 end
