@@ -1,0 +1,583 @@
+---
+ar:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'فشل التحقّق من: %{errors}'
+        restrict_dependent_destroy:
+          has_one: لا يمكن حذف السجل لوجود سجل يعتمد عليه %{record}
+          has_many: لا يمكن حذف السجل لوجود سجلات تعتمد عليه %{record}
+  date:
+    abbr_day_names:
+    - الأحد
+    - الإثنين
+    - الثّلاثاء
+    - الأربعاء
+    - الخميس
+    - الجمعة
+    - السّبت
+    abbr_month_names:
+    -
+    - يناير
+    - فبراير
+    - مارس
+    - أبريل
+    - مايو
+    - يونيو
+    - يوليو
+    - أغسطس
+    - سبتمبر
+    - أكتوبر
+    - نوفمبر
+    - ديسمبر
+    day_names:
+    - الأحد
+    - الإثنين
+    - الثّلاثاء
+    - الأربعاء
+    - الخميس
+    - الجمعة
+    - السّبت
+    formats:
+      default: "%d-%m-%Y"
+      long: "%e %B، %Y"
+      short: "%e %b"
+    month_names:
+    - 
+    - كانون الثاني
+    - شباط
+    - آذار
+    - نيسان
+    - أيار
+    - حزيران
+    - تموز
+    - آب
+    - أيلول
+    - تشرين الأول
+    - تشرين الثاني
+    - كانون الأول
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        zero: حوالي صفر ساعات
+        one: حوالي ساعة واحدة
+        two: حوالي ساعتان
+        few: حوالي %{count} ساعات
+        many: حوالي %{count} ساعة
+        other: حوالي %{count} ساعة
+      about_x_months:
+        zero: حوالي صفر أشهر
+        one: حوالي شهر واحد
+        two: حوالي شهران
+        few: حوالي %{count} أشهر
+        many: حوالي %{count} شهر
+        other: حوالي %{count} شهر
+      about_x_years:
+        zero: حوالي صفر سنوات
+        one: حوالي سنة
+        two: حوالي سنتان
+        few: حوالي %{count} سنوات
+        many: حوالي %{count} سنة
+        other: حوالي %{count} سنة
+      almost_x_years:
+        zero: ما يقرب من صفر سنوات
+        one: تقريبا سنة واحدة
+        two: ما يقرب من سنتين
+        few: ما يقرب من %{count} سنوات
+        many: ما يقرب من %{count} سنة
+        other: ما يقرب من %{count} سنة
+      half_a_minute: نصف دقيقة
+      less_than_x_seconds:
+        zero: أقل من صفر ثواني
+        one: أقل من ثانية
+        two: أقل من ثانيتان
+        few: أقل من %{count} ثوان
+        many: أقل من %{count} ثانية
+        other: أقل من %{count} ثانية
+      less_than_x_minutes:
+        zero: أقل من صفر دقائق
+        one: أقل من دقيقة
+        two: أقل من دقيقتان
+        few: أقل من %{count} دقائق
+        many: أقل من %{count} دقيقة
+        other: أقل من %{count} دقيقة
+      over_x_years:
+        zero: أكثر من صفر سنوات
+        one: أكثر من سنة
+        two: أكثر من سنتين
+        few: أكثر من %{count} سنوات
+        many: أكثر من %{count} سنة
+        other: أكثر من %{count} سنة
+      x_seconds:
+        zero: صفر ثواني
+        one: ثانية واحدة
+        two: ثانيتان
+        few: "%{count} ثوان"
+        many: "%{count} ثانية"
+        other: "%{count} ثانية"
+      x_minutes:
+        zero: صفر دقائق
+        one: دقيقة واحدة
+        two: دقيقتان
+        few: "%{count} دقائق"
+        many: "%{count} دقيقة"
+        other: "%{count} دقيقة"
+      x_days:
+        zero: صفر أيام
+        one: يوم واحد
+        two: يومان
+        few: "%{count} أيام"
+        many: "%{count} يوم"
+        other: "%{count} يوم"
+      x_months:
+        zero: صفر أشهر
+        one: شهر واحد
+        two: شهران
+        few: "%{count} أشهر"
+        many: "%{count} شهر"
+        other: "%{count} شهر"
+    prompts:
+      second: ثانية
+      minute: دقيقة
+      hour: ساعة
+      day: اليوم
+      month: الشهر
+      year: السنة
+  errors:
+    format: "%{message}"
+    messages:
+      accepted: يجب أن تقبل %{attribute}
+      blank: لا يمكن أن يكون محتوى %{attribute} فارغاً
+      confirmation: محتوى %{attribute} لا يتوافق مع %{attribute}
+      empty: لا يمكن أن يكون محتوى %{attribute} فارغاً
+      equal_to: يجب أن يساوي طول %{attribute} %{count}
+      even: يجب أن يكون عدد %{attribute} زوجياً
+      exclusion: حقل %{attribute} محجوز
+      greater_than: ميجب أن يكون عدد %{attribute} أكبر من %{count}
+      greater_than_or_equal_to: يجب أن يكون عدد %{attribute} أكبر أو يساوي %{count}
+      inclusion: "%{attribute} غير وارد في القائمة"
+      invalid: محتوى %{attribute} غير صالح
+      less_than: يجب أن يكون عدد %{attribute} أصغر من %{count}
+      less_than_or_equal_to: يجب أن يكون عدد %{attribute} أصغر أو  يساوي %{count}
+      not_a_number: يجب أن يكون محتوى %{attribute} رقماً
+      not_an_integer: يجب أن يكون عدد %{attribute} عدد صحيحاً
+      odd: يجب أن يكون عدد %{attribute} عدداً فردياً
+      other_than:
+        zero: طول %{attribute} يجب ألاّ يكون صفر حرف
+        one: طول %{attribute} يجب ألاّ يكون حرفاً واحداً
+        two: طول %{attribute} يجب ألاّ يكون حرفان
+        few: طول %{attribute} يجب ألاّ يكون %{count} أحرف
+        many: طول %{attribute} يجب ألاّ يكون %{count} حرفاً
+        other: طول %{attribute} يجب ألاّ يكون %{count} حرفاً
+      present: يجب ترك حقل %{attribute} فارغاً
+      taken: حقل %{attribute} محجوز مسبقاً
+      too_long:
+        zero: محتوى %{attribute} أطول من اللّازم (الحد الأقصى هو ولا حرف)
+        one: محتوى %{attribute} أطول من اللّازم (الحد الأقصى هو حرف واحد)
+        two: محتوى %{attribute} أطول من اللّازم (الحد الأقصى هو حرفان)
+        few: محتوى %{attribute} أطول من اللّازم (الحد الأقصى هو %{count} حروف)
+        many: محتوى %{attribute} أطول من اللّازم (الحد الأقصى هو %{count} حرف)
+        other: محتوى %{attribute} أطول من اللّازم (الحد الأقصى هو %{count} حرف)
+      too_short:
+        zero: محتوى %{attribute} أقصر من اللّازم (الحد الأدنى هو ولا حرف)
+        one: محتوى %{attribute} أقصر من اللّازم (الحد الأدنى هو حرف واحد)
+        two: محتوى %{attribute} أقصر من اللّازم (الحد الأدنى هو حرفان)
+        few: محتوى %{attribute} أقصر من اللّازم (الحد الأدنى هو %{count} حروف)
+        many: محتوى %{attribute} أقصر من اللّازم (الحد الأدنى هو %{count} حرف)
+        other: محتوى %{attribute} أقصر من اللّازم (الحد الأدنى هو %{count} حرف)
+      wrong_length:
+        zero: طول %{attribute} غير مطابق للحد المطلوب (يجب أن يكون ولا حرف)
+        one: طول %{attribute} غير مطابق للحد المطلوب (يجب أن يكون حرف واحد)
+        two: طول %{attribute} غير مطابق للحد المطلوب (يجب أن يكون حرفان)
+        few: طول %{attribute} غير مطابق للحد المطلوب (يجب أن يكون %{count} أحرف)
+        many: طول %{attribute} غير مطابق للحد المطلوب (يجب أن يكون %{count} حرف)
+        other: طول %{attribute} غير مطابق للحد المطلوب (يجب أن يكون %{count} حرف)
+    template:
+      body: يُرجى التحقّق من الحقول التّالية:%{attribute}
+      header:
+        zero: ليس بالامكان حفظ %{model} لسبب ولا خطأ.
+        one: ليس بالامكان حفظ %{model} لسبب وجود خطأ واحد.
+        two: ليس بالامكان حفظ %{model} لسبب وجود خطئان.
+        few: ليس بالامكان حفظ %{model} لسبب وجود %{count} أخطاء.
+        many: ليس بالامكان حفظ %{model} لسبب وجود %{count} خطأ.
+        other: ليس بالامكان حفظ %{model} لسبب وجود %{count} خطأ.
+  helpers:
+    select:
+      prompt: يُرجى الاختيار
+    submit:
+      create: "%{model} إنشاء"
+      submit: "%{model} حِفظ"
+      update: "%{model} تحديث"
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u %n"
+        precision: 3
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "KWD"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: مليار
+          million: مليون
+          quadrillion: كدريليون
+          thousand: ألفّ
+          trillion: تريليون
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            zero: Bytes
+            one: Byte
+            two: Bytes
+            few: Bytes
+            many: Bytes
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " و "
+      two_words_connector: " و "
+      words_connector: " ، "
+  time:
+    am: صباحًا
+    formats:
+      default: "%a %b %d %H:%M:%S %Z %Y"
+      long: "%d %B, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: مساءً
+
+
+  admin:
+    js:
+      true: True
+      false: False
+      is_present: Is present
+      is_blank: Is blank
+      date: Date ...
+      between_and_: Between ... and ...
+      today: اليوم
+      yesterday: الأمس
+      this_week: هذا اﻷاسبوع
+      last_week: الأسبوع الماضي
+      number: Number ...
+      contains: Contains
+      is_exactly: Is exactly
+      starts_with: Starts with
+      ends_with: Ends with
+      too_many_objects: "Too many objects, use search box above"
+      no_objects: "No objects found"
+    loading: "تحميل..."
+    toggle_navigation: Toggle navigation
+    home:
+      name: "الصفحة الرئيسية"
+    pagination:
+      previous: "&laquo; Prev"
+      next: "Next &raquo;"
+      truncate: "…"
+    misc:
+      filter_date_format: "mm/dd/yy" # a combination of 'dd', 'mm' and 'yy' with any delimiter. No other interpolation will be done!
+      search: "بحث"
+      filter: "فلترة"
+      refresh: "تحديث"
+      show_all: "مشاهدة الكل"
+      add_filter: "إضافة فلترة"
+      bulk_menu_title: "Selected items"
+      remove: "حذف"
+      add_new: "إضافة جديد"
+      chosen: "Chosen %{name}"
+      chose_all: "أختيار الكل"
+      clear_all: "ألغاء الكل"
+      up: "أعلى"
+      down: "أسفل"
+      navigation: "Navigation"
+      navigation_static_label: "روابط"
+      log_out: "تسجيل خروج"
+      ago: "منذ"
+      more: "Plus %{count} more %{models_name}"
+    flash:
+      successful: "%{name} بنجاح %{action}"
+      error: "%{name} فشل %{action}"
+      noaction: "لم يتم تحديث أي شي"
+      model_not_found: "Model '%{model}' لا يمكن إيجاده"
+      object_not_found: "%{model} with id '%{id}' لا يمكن إيجاده"
+    table_headers:
+      model_name: "أسم المودل"
+      last_created: "أخر إنشاء"
+      last_used: "أخر إستخدام"
+      records: "سجلات"
+      username: "المستخدم"
+      changes: "التغيرات"
+      created_at: "التاريخ/الوقت"
+      item: "المادة"
+      message: "الرسالة"
+    actions:
+      dashboard:
+        title: "إدارة الموقع"
+        menu: "لوحة التحكم"
+        breadcrumb: "لوحة التحكم"
+      index:
+        title: "قائمة %{model_label_plural}"
+        menu: "قائمة"
+        breadcrumb: "%{model_label_plural}"
+      show:
+        title: "معلومات من أجل %{model_label} '%{object_label}'"
+        menu: "عرض"
+        breadcrumb: "%{object_label}"
+      show_in_app:
+        menu: "مشاهدة على الموقع"
+      new:
+        title: "جديد %{model_label}"
+        menu: "إضافة جديد"
+        breadcrumb: "جديد"
+        link: "إضافة جديد %{model_label}"
+        done: "تم الإنشاء"
+      edit:
+        title: "تعديل %{model_label} '%{object_label}'"
+        menu: "تعديل"
+        breadcrumb: "تعديل"
+        link: "تعديل من أجل %{model_label}"
+        done: "تم التحديث"
+      delete:
+        title: "حذف %{model_label} '%{object_label}'"
+        menu: "حذف"
+        breadcrumb: "حذف"
+        link: "حذف '%{object_label}'"
+        done: "تم الحذف"
+      bulk_delete:
+        title: "حذف %{model_label_plural}"
+        menu: "حذف متعدد"
+        breadcrumb: "حذف متعدد"
+        bulk_link: "حذف المحدد %{model_label_plural}"
+      export:
+        title: "تصدير %{model_label_plural}"
+        menu: "تصدير"
+        breadcrumb: "تصدير"
+        link: "تصدير الموجود في %{model_label_plural}"
+        bulk_link: "تصدير المحدد %{model_label_plural}"
+        done: "تم التصدير"
+      history_index:
+        title: "History for %{model_label_plural}"
+        menu: "History"
+        breadcrumb: "History"
+      history_show:
+        title: "History for %{model_label} '%{object_label}'"
+        menu: "History"
+        breadcrumb: "History"
+    form:
+      cancel: "ألغاء"
+      basic_info: "معلومات أساسية"
+      required: "مطلوب"
+      optional: "خياري"
+      one_char: "محرف واحد"
+      char_length_up_to: "length up to"
+      char_length_of: "length of"
+      save: "حفظ"
+      save_and_add_another: "حفظ وإضافة جديد"
+      save_and_edit: "حفظ وتعديل"
+      all_of_the_following_related_items_will_be_deleted: "? The following related items may be deleted or orphaned:"
+      are_you_sure_you_want_to_delete_the_object: "هل أنت متأكد من حذف  %{model_name}"
+      confirmation: "نعم،  متأكد"
+      bulk_delete: "The following objects will be deleted, which may delete or orphan some of their related dependencies:"
+      new_model: "%{name} (new)"
+    export:
+      confirmation: "Export to %{name}"
+      select: "Select fields to export"
+      select_all_fields: "Select All Fields"
+      fields_from: "Fields from %{name}"
+      fields_from_associated: "Fields from associated %{name}"
+      display: "Display %{name}: %{type}"
+      options_for: "Options for %{name}"
+      empty_value_for_associated_objects: "<empty>"
+      click_to_reverse_selection: 'Click to reverse selection'
+      csv:
+        header_for_root_methods: "%{name}" # 'model' is available
+        header_for_association_methods: "%{name} [%{association}]"
+        encoding_to: "Encode to"
+        encoding_to_help: "Choose output encoding. Leave empty to let current input encoding untouched: (%{name})"
+        skip_header: "No header"
+        skip_header_help: "Do not output a header (no fields description)"
+        default_col_sep: ","
+        col_sep: "Column separator"
+        col_sep_help: "Leave blank for default ('%{value}')" # value is default_col_sep
+
+
+        
+  activerecord:
+    attributes:
+      user:
+        confirmation_sent_at: تم إرسال رسالة التأكيد في
+        confirmation_token: رمز التوكن للتأكيد
+        confirmed_at: تم التأكيد في
+        created_at: تم الإنشاء في
+        current_password: كلمة المرور الحالية
+        current_sign_in_at: تسجيل الدخول الحالي في
+        current_sign_in_ip: عنوان IP لتسجيل الدخول الحالي
+        email: بريد إلكتروني
+        encrypted_password: كلمة المرور المشفرة
+        failed_attempts: محاولات فاشلة
+        last_sign_in_at: آخر تسجيل دخول في
+        last_sign_in_ip: عنوان IP لآخر تسجيل دخول
+        locked_at: تم القفل في
+        password: كلمة المرور
+        password_confirmation: تأكيد كلمة المرور
+        remember_created_at: تم إنشاء التذكير في
+        remember_me: تذكرني
+        reset_password_sent_at: إعادة تعيين كلمة المرور مرسلة في
+        reset_password_token: رمز التوكن لإعادة تعيين كلمة المرور
+        sign_in_count: عدد تسجيلات الدخول
+        unconfirmed_email: البريد الإلكتروني غير مؤكد
+        unlock_token: فتح قفل رمز التوكن
+        updated_at: تم التحديث في
+    models:
+      user: المستخدم
+  devise:
+    confirmations:
+      confirmed: تم تأكيد عنوان بريدك الإلكتروني بنجاح.
+      new:
+        resend_confirmation_instructions: إعادة إرسال تعليمات التأكيد
+      send_instructions: ستتلقى رسالة بريد إلكتروني بها تعليمات عن كيفية تأكيد عنوان بريدك الإلكتروني في غضون بضع دقائق.
+      send_paranoid_instructions: إذا كان بريدك الإلكتروني موجود في قاعدة البيانات لدينا، ستتلقى رسالة بريد إلكتروني بها تعليمات عن كيفية تأكيد عنوان بريدك الإلكتروني في بضع دقائق.
+    failure:
+      already_authenticated: لقد قمت بتسجيل الدخول بالفعل.
+      inactive: لم يتم تفعيل حسابك بعد.
+      invalid:
+      last_attempt: لديك محاولة أو أكثر قبل غلق حسابك.
+      locked: تم غلق حسابك.
+      not_found_in_database:
+      timeout: انتهى الوقت المخصص للجلسة. الرجاء تسجيل الدخول مرة أخرى للمتابعة.
+      unauthenticated: تحتاج إلى تسجيل الدخول أو التسجيل قبل المتابعة.
+      unconfirmed: تحتاج إلى تأكيد عنوان بريدك الإلكتروني قبل المتابعة.
+    mailer:
+      confirmation_instructions:
+        action: تأكيد حسابي
+        greeting: مرحباً %{recipient}
+        instruction: 'يُمكنك تأكيد بريدك الإلكتروني من خلال الرابط أدناه:'
+        subject: تعليمات التأكيد
+      email_changed:
+        greeting: أهلا %{recipient} !
+        message: نتصل بك لإخبارك أنّ عنوان بريدك الإلكتروني قد تم تغييره إلى %{email}.
+        message_unconfirmed:
+        subject: تم تغيير عنوان البريد الإلكتروني
+      password_change:
+        greeting: مرحباً %{recipient}
+        message: لقد قمنا بالاتصال بك لإخبارك أنه قد تم تغيير كلمة مرورك.
+        subject: تم تغيير كلمة المرور
+      reset_password_instructions:
+        action: تغيير كلمة مروري
+        greeting: مرحباً %{recipient}
+        instruction: لقد طلب شخص ما رابط لتغيير كلمة مرورك، ويُمكنك القيام بذلك من خلال الرابط أدناه.
+        instruction_2: إذا لم تقم بطلب ذلك، الرجاء تجاهل هذه الرسالة.
+        instruction_3: لن يتم تغيير كلمة مرورك حتى تقوم بفتح الرابط أعلاه وإنشاء كلمة مرور جديدة.
+        subject: تعليمات إعادة تعيين كلمة المرور
+      unlock_instructions:
+        action: إلغاء قفل حسابي
+        greeting: مرحباً %{recipient}
+        instruction: 'انقر فوق الرابط أدناه لإلغاء قفل حسابك:'
+        message: تم غلق حسابك بسس العدد الكبير من محاولات تسجيل الدخول غير الناجحة.
+        subject: تعليمات إلغاء القفل
+    omniauth_callbacks:
+      failure: تعذر التحقق منك من %{kind} بسبب "%{reason}".
+      success: تمت المصادقة بنجاح من حساب %{kind}.
+    passwords:
+      edit:
+        change_my_password: تغيير كلمة مروري
+        change_your_password: تغيير كلمة مرورك
+        confirm_new_password: تأكيد كلمة المرور الجديدة
+        new_password: كلمة المرور الجديدة
+      new:
+        forgot_your_password: نسيت كلمة مرورك؟
+        send_me_reset_password_instructions: أرسل لي تعليمات إعادة تعيين كلمة المرور
+      no_token: لا يُمكنك الوصول إلى هذه الصفحة دون تأكيد رسالة البريد الإلكتروني المحتوية على إعادة تعيين كلمة المرور. إذا كنت قد انتقلت من رسالة تعيين كلمة المرور، الرجاء التأكد من أنك استخدمت رابط URL الكامل الموجود في الرسالة.
+      send_instructions: ستتلقى رسالة بريد إلكرتوني بها تعليمات ععن كيفية إعادة تعيين كلمة مرورك في غضون بضع دقائق.
+      send_paranoid_instructions: إذا كان بريدك الإلكتروني موجود في قاعدة البيانات لدينا، ستتلقى رابط استعادة كلمة المرور على عنوان بريدك الإلكتروني في غضون بضع دقائق.
+      updated: تم تغيير كلمة مرورك بنجاح. أنت الآن مُسجِّل الدخول.
+      updated_not_active: تم تغيير كلمة مرورك بنجاح.
+    registrations:
+      destroyed: وداعاً! تم إلغاء حسابك بنجاح. نأمل أن نراك مرة أخرى في القريب العاجل.
+      edit:
+        are_you_sure: هل أنت متأكد؟
+        cancel_my_account: إلغاء حسابي
+        currently_waiting_confirmation_for_email: 'قيد انتظار التأكيد حالياً لـ: %{email}'
+        leave_blank_if_you_don_t_want_to_change_it: اتركه فارغاً إذا كنت لا ترغب في تغييره
+        title: تحرير %{resource}
+        unhappy: غير سعيد؟
+        update: تحديث
+        we_need_your_current_password_to_confirm_your_changes: نحتاج إلى كلمة مرورك الحالية لتأكيد التغيرات التي قمت بها
+      new:
+        sign_up: التسجيل
+      signed_up: مرحباً! لقد قمت بالتسجيل بنجاح.
+      signed_up_but_inactive: لقد قمت بالتسجيل بنجاح. ومع ذلك، لن نتمكن من تسجيل دخولك لحسابك لأن حسابك لم يتم تفعيله بعد.
+      signed_up_but_locked: لقد قمت بالتسجيل بنجاح. ومع ذلك، لن نتمكن من تسجيل دخولك لحسابك لأن حسابك مغلق.
+      signed_up_but_unconfirmed: تم إرسال رسالة بها رابط التأكيد إلى عنوان بريدك الإلكتروني. الرجاء اتباع الرابط لتفعيل حسابك.
+      update_needs_confirmation: لقد قمت بتحديث حسابك بنجاح، ولكن نحتاج إلى تأكيد عنوان بريدك الإلكتروني الجديد. الرجاء التحقق من بريدك الإلكتروني واتباع رابط التأكيد لتأكيد عنوان بريدك الإلكتروني الجديد.
+      updated: تم تحديث حسابك بنجاح.
+      updated_but_not_signed_in:
+    sessions:
+      already_signed_out: تم تسجيل الخروج بنجاح.
+      new:
+        sign_in: تسجيل الدخول
+      signed_in: تم تسجيل الدخول بنجاح.
+      signed_out: تم تسجيل الخروج بنجاح.
+    shared:
+      links:
+        back: رجوع
+        didn_t_receive_confirmation_instructions: لم تتلقى تعليمات التأكيد؟
+        didn_t_receive_unlock_instructions: لم تتلقى تعليمات إلغاء القفل؟
+        forgot_your_password: نسيت كلمة مرورك؟
+        sign_in: تسجيل الدخول
+        sign_in_with_provider: تسجيل الدخول باستخدام %{provider}
+        sign_up: التسجيل
+      minimum_password_length:
+    unlocks:
+      new:
+        resend_unlock_instructions: إعادة إرسال تعليمات إلغاء القفل
+      send_instructions: ستتلقى رسالة بريد إلكتروني بها تعليمات عن كيفية إلغاء قفل حسابك في غضون بضع دقائق.
+      send_paranoid_instructions: إذا كان حسابك موجود، ستتلقى رسالة بريد إلكتروني بها تعليمات عن كيفية إلغاء القفلل غي غضون دقائق.
+      unlocked: تم إلغاء قفل حسابك بنجاح. الرجاء تسجيل الدخول للمتابعة.
+  errors:
+    messages:
+      already_confirmed: تم تأكيده بالفعل، الرجاء محاولة تسجيل الدخول
+      confirmation_period_expired: يحتاج إلى التأكيد في غضون %{period}،الرجاء طلب رابط تأكيد جديد
+      expired: قد انتهت المدة، الرجاء طلب رابط تأكيد جديد
+      not_found: غير موجود
+      not_locked: لم يتم إلغاء قفله
+      not_saved:
+        few: "%{count} أخطاء منع %{resource} هذا من أن يتم حفظه:"
+        many: "%{count} أخطاء منع %{resource} هذا من أن يتم حفظه:"
+        one: '1 خطأ منع %{resource} هذا من أن يتم حفظه:'
+        other: "%{count} أخطاء منع %{resource} هذا من أن يتم حفظه:"
+        two: "%{count} أخطاء منع %{resource} هذا من أن يتم حفظه:"
+        zero: "%{count} أخطاء منع %{resource} هذا من أن يتم حفظه:"
+
+

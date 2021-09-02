@@ -39,7 +39,7 @@ class AttendingsController < ApplicationController
   def update
     respond_to do |format|
       if @attending.update(attending_params)
-        format.html { redirect_to @attending, notice: "Attending was successfully updated." }
+        format.html { redirect_to @attending, notice: "تم تسجيل حضور الطلاب بنجاح." }
         format.json { render :show, status: :ok, location: @attending }
       else
         format.html { render :edit, status: :unprocessable_entity }
