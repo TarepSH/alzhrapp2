@@ -60,9 +60,9 @@ ActiveRecord::Schema.define(version: 2021_09_02_094605) do
     t.integer "school_class"
     t.integer "mobile_phone"
     t.integer "line_phone"
-    t.integer "attendings_point"
-    t.integer "memorizations_point"
-    t.integer "toltal_point"
+    t.integer "attendings_point", default: 0
+    t.integer "memorizations_point", default: 0
+    t.integer "toltal_point", default: 0
     t.integer "studentclass_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

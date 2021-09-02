@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: %i[ show edit update destroy ]
-
+  
   # GET /students or /students.json
   def index
     @students = Student.all
@@ -38,6 +38,10 @@ class StudentsController < ApplicationController
   def update
     respond_to do |format|
       if @student.update(student_params)
+        memorizationspoint = @student.memorizations.count * 30
+        @student.update(memorizations_point: memorizationspoint.to_i) 
+        @student.update(toltal_point: @student.attendings_point.to_i + @student.memorizations_point.to_i)
+
         format.html { redirect_to @student, notice: "Student was successfully updated." }
         format.json { render :show, status: :ok, location: @student }
       else
@@ -56,6 +60,7 @@ class StudentsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student
@@ -66,4 +71,13 @@ class StudentsController < ApplicationController
     def student_params
       params.require(:student).permit(:first_name, :last_name, :school_class, :mobile_phone, :line_phone, :studentclass_id, memorization_ids:[])
     end
+
+
+    #def adding_point2
+    
+     # memorizationspoint = @student.memorizations.count * 30
+      #@student.update(memorizations_point: memorizationspoint.to_i) 
+      #self.save(:toltal_point = (a.attendings_point.to_i + a.memorizations_point.to_i))
+    
+    #end
 end
