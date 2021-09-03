@@ -1,0 +1,51 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ 
+ */
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+@font-face {
+    font-family: 'DroidKufi';
+    src: url('DroidKufi-Regular.ttf');
+ }
+
+ body {
+    font-family: "DroidKufi" !important;
+    direction: rtl;
+ }
+
+a:visited  {
+    color: inherit ;
+ }
+
+ .current {
+   z-index: 3;
+   color: #fff;
+   background-color: #0d6efd;
+   border-color: #0d6efd;
+ }
+
+ .disabled-custom{
+   pointer-events: none !important;
+   cursor: not-allowed !important;
+   color: gray !important;
+   background-color: gray !important;
+  }
+  
+  .disabled-custom-label{
+   pointer-events: none !important;
+   cursor: not-allowed !important;
+  }
