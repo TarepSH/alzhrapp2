@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2021_09_03_170417) do
     t.integer "toltal_point", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "studentclass_id", null: false
+    t.bigint "studentclass_id"
     t.index ["studentclass_id"], name: "index_students_on_studentclass_id"
   end
 
