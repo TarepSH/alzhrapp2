@@ -9,7 +9,7 @@ class CreateStudents < ActiveRecord::Migration[6.1]
       t.integer :attendings_point, default: 0
       t.integer :memorizations_point, default: 0
       t.integer :toltal_point, default: 0
-      t.references :studentclass, null: true, foreign_key: true
+      #t.references :studentclass, null: true, foreign_key: true
 
       t.timestamps
     end

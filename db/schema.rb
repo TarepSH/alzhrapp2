@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_02_094605) do
+ActiveRecord::Schema.define(version: 2021_09_03_170417) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "attendings", force: :cascade do |t|
     t.date "name"
@@ -19,8 +22,8 @@ ActiveRecord::Schema.define(version: 2021_09_02_094605) do
   end
 
   create_table "attendings_students", force: :cascade do |t|
-    t.integer "attending_id", null: false
-    t.integer "student_id", null: false
+    t.bigint "attending_id", null: false
+    t.bigint "student_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["attending_id"], name: "index_attendings_students_on_attending_id"
@@ -36,8 +39,8 @@ ActiveRecord::Schema.define(version: 2021_09_02_094605) do
   end
 
   create_table "memorizations_students", force: :cascade do |t|
-    t.integer "memorization_id", null: false
-    t.integer "student_id", null: false
+    t.bigint "memorization_id", null: false
+    t.bigint "student_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["memorization_id"], name: "index_memorizations_students_on_memorization_id"
@@ -46,10 +49,10 @@ ActiveRecord::Schema.define(version: 2021_09_02_094605) do
 
   create_table "studentclasses", force: :cascade do |t|
     t.string "name"
-    t.integer "students_id"
+    t.bigint "students_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "teacher_id"
+    t.bigint "teacher_id"
     t.index ["students_id"], name: "index_studentclasses_on_students_id"
     t.index ["teacher_id"], name: "index_studentclasses_on_teacher_id"
   end
@@ -63,9 +66,9 @@ ActiveRecord::Schema.define(version: 2021_09_02_094605) do
     t.integer "attendings_point", default: 0
     t.integer "memorizations_point", default: 0
     t.integer "toltal_point", default: 0
-    t.integer "studentclass_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "studentclass_id", null: false
     t.index ["studentclass_id"], name: "index_students_on_studentclass_id"
   end
 
@@ -78,7 +81,7 @@ ActiveRecord::Schema.define(version: 2021_09_02_094605) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin", default: false
-    t.integer "studentclasses_id"
+    t.bigint "studentclasses_id"
     t.index ["email"], name: "index_teachers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true
     t.index ["studentclasses_id"], name: "index_teachers_on_studentclasses_id"
