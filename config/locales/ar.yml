@@ -386,6 +386,10 @@ ar:
         link: "تصدير الموجود في %{model_label_plural}"
         bulk_link: "تصدير المحدد %{model_label_plural}"
         done: "تم التصدير"
+      import:
+        breadcrumb: "إستيراد"
+        menu: "إستيراد"
+
       history_index:
         title: "History for %{model_label_plural}"
         menu: "History"
@@ -579,5 +583,3 @@ ar:
         other: "%{count} أخطاء منع %{resource} هذا من أن يتم حفظه:"
         two: "%{count} أخطاء منع %{resource} هذا من أن يتم حفظه:"
         zero: "%{count} أخطاء منع %{resource} هذا من أن يتم حفظه:"
-
-
