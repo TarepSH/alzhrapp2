@@ -6,7 +6,7 @@ class Attending < ApplicationRecord
   def adding_point
     a = Student.find(self.student_ids)
     a.each do |aa|
-      attendingspoint = aa.attendings.count * 20
+      attendingspoint = aa.attendings.count * 25
       aa.update(:attendings_point =>  attendingspoint) 
       aa.update(:toltal_point => (aa.attendings_point.to_i + aa.memorizations_point.to_i))
     end
