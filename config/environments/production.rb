@@ -118,5 +118,5 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  config.i18n.available_locales = [:ar, :en]
+  #config.i18n.available_locales = [:ar, :en]
 end
