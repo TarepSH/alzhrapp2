@@ -25,36 +25,15 @@ RailsAdmin.config do |config|
   config.label_methods << :email
 
   config.model 'AttendingsStudent' do
+    include_all_fields
+    field :studentclasses do
+      formatted_value{ bindings[:object].student.studentclass.name}
+      #filterable true
+      #queryable true
+      searchable true
+    end
     list do
-        filters [:created_at, :attending_id,:student_id,:studentclasses]
-        field :created_at do # (1)
-          searchable false
-          filterable true
-        end
-  
-        field :attending_id do # (2)
-          searchable :attending_id
-          filterable true
-        end
-
-        field :student_id do # (2)
-          searchable :student_id
-          filterable true
-        end
-
-        field :studentclasses do # (4)
-          formatted_value{ bindings[:object].student.studentclass.name }
-        queryable true
-        filterable true
-        #searchable [:student]
-        # eq. to [Team => :name, Team => :id]
-        # or even [:name, Player => :team_id] will search on teams.name and players.team_id
-        # if you need to specify the join association name:
-        # (See #526 and http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html => table_aliasing)
-        #searchable [{:teams => :name}, {:teams => :id}]
-        # or
-        #searchable ["teams.name", "teams.id"]
-      end
+      #filters [:studentclasses] # this will make it show up by default
     end
   end
 
