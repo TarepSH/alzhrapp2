@@ -18,12 +18,15 @@ class AttendingsController < ApplicationController
 
   # GET /attendings/1/edit
   def edit
+    #@students =Student.all 
+    @studentsfornotteacher = Student.where.not(studentclass_id: current_teacher.Studentclass)  
+    @studentsforteacher = Student.where(studentclass_id: current_teacher.Studentclass)  
+    
   end
 
   # POST /attendings or /attendings.json
   def create
     @attending = Attending.new(attending_params)
-
     respond_to do |format|
       if @attending.save
         format.html { redirect_to @attending, notice: "Attending was successfully created." }
@@ -39,7 +42,7 @@ class AttendingsController < ApplicationController
   def update
     respond_to do |format|
       if @attending.update(attending_params)
-        format.html { redirect_to @attending, notice: "تم تسجيل حضور الطلاب بنجاح." }
+        format.html { redirect_to "/attendings", notice: "تم تسجيل حضور الطلاب بنجاح." }
         format.json { render :show, status: :ok, location: @attending }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,6 +68,6 @@ class AttendingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def attending_params
-      params.require(:attending).permit(:name, student_ids: [])
+      params.require(:attending).permit(:name, :student_ids, student_ids: [])
     end
 end

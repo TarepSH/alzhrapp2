@@ -6,7 +6,9 @@ class Student < ApplicationRecord
   has_and_belongs_to_many :attendings
   has_and_belongs_to_many :memorizations
 
-
+  def name_with_initial
+    "#{first_name} #{last_name}"
+  end
 
  # def adding_point
    # a = Student.find(self.id)
