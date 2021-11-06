@@ -15,11 +15,12 @@
       <br>
 
   <div class="form-group">
-  <% Memorization.all.each do |memorization| %>
+  <% @memorizationsforstudent.each do |memorization| %>
     <h5><%= check_box_tag "student[memorization_ids][]",memorization.id, @student.memorization_ids.include?(memorization.id), id: dom_id(memorization), class: (@student.memorization_ids.include?(memorization.id) ? "form-check-input disabled-custom" : "form-check-input") %>
-    <%= label_tag dom_id(memorization), "اسم السورة" + (memorization.name).to_s + " رقم الصفحة " + (memorization.page).to_s + " الجزء " + (memorization.part).to_s, :class => 'form-check-label disabled-custom-label' %> </h5>
+    <%= label_tag dom_id(memorization), "اسم السورة " + (memorization.name).to_s + " رقم الصفحة " + (memorization.page).to_s + " الجزء " + (memorization.part).to_s, :class => 'form-check-label disabled-custom-label' %> </h5>
     <br>
   <% end %>
+  <%= paginate @memorizationsforstudent %>
 
   </div>
     <br>

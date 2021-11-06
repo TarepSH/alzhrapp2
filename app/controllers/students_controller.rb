@@ -17,6 +17,7 @@ class StudentsController < ApplicationController
 
   # GET /students/1/edit
   def edit
+    @memorizationsforstudent = Memorization.order(:page).page(params[:page]).per(21)
   end
 
   # POST /students or /students.json
