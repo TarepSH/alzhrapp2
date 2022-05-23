@@ -6,11 +6,13 @@
 
       <strong>التاريخ:</strong>
       <br>
-      <%= @attending.name %>
+      <%= @attending.id %>  <br> <%= @attending.name %> 
       <br>  <br>
+      <%= image_tag("/date-barcode/bcs_D ("+@attending.id.to_s+").png", :alt => @attending.id.to_s + "Barcode") %>  
+      <br>
       <strong>الطلاب:</strong>
       <br>
-    
+
       <% @attending.students.each do |attending| %>
         <tr>
           <td><%= attending.first_name %> <%= attending.last_name %></td>

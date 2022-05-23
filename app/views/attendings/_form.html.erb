@@ -10,8 +10,12 @@
       </ul>
     </div>
   <% end %>
-      <h5>حدد الطلاب لتسجيل حضورهم لتاريخ <strong><%= attending.name %></strong></h5>
+      <h5>حدد الطلاب لتسجيل حضورهم لتاريخ <strong> <br>
+      <%= attending.id %> <br>  <%= @attending.name %>   </strong></h5>
       <br>
+      <%= image_tag("/date-barcode/bcs_D ("+@attending.id.to_s+").png", :alt => @attending.id.to_s + "Barcode") %>  
+      <br>
+
   <div class="form-group">
   <%= form.collection_check_boxes :student_ids, @studentsfornotteacher.order(:id),  :id, :first_name do |t|%>
     <div class="d-none">

@@ -5,9 +5,11 @@
 <div class="container">
   <div class="row ">
     <div class="col-6 col justify-content-center">
-      <table class="table table-bordered table-striped">
+      <table class="table align-middle ">
         <thead>
           <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Barcode</th>
             <th scope="col">التاريخ</th>
             <th scope="col"></th>
           </tr>
@@ -16,6 +18,8 @@
         <tbody>
           <% @attendings.each do |attending| %>
             <tr>
+              <td><%= attending.id %></td>
+              <td><%= image_tag("/date-barcode/bcs_D ("+attending.id.to_s+").png", :alt => attending.id.to_s + "Barcode") %></td>
               <td scope="row"><strong><h5><%= attending.name %></h5></strong></td>
               <td scope="row"><%= link_to 'اختيار', edit_attending_path(attending), class: "btn btn-primary " %></td>
             </tr>
